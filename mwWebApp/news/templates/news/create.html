@@ -1,0 +1,17 @@
+{% extends 'main/layout.html' %}
+
+{% block title %}Create new post{% endblock %}
+
+{% block content %}
+    <div class="features">
+        <h1>Create new post</h1>
+        <form method="post">
+            {% csrf_token %}<br>
+            {% for obj in form %}
+                {{ obj }}<br>
+            {% endfor %}
+            <span>{{ error }}</span>
+            <button class="btn btn-success" type="submit">Create post</button>
+        </form>
+    </div>
+{% endblock %}
